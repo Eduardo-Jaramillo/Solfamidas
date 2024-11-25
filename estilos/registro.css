@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --light-color: #F7C364;
+    --dark-color: #D89231;
+    --dark-blue: #395E92;
+    --light-blue: #5E8ABF;
+}
+
+body {
+    font-family: "Montserrat", serif;
+    line-height: 1.6rem;
+    padding: 10px 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+}
+
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 3%;
+}
+
+header img {
+    height: 25vh;
+    margin-bottom: 10%;
+    border-radius: 70%;
+    box-shadow: 2px 4px 8px rgba(255, 255, 255, 0.4);
+    
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color:var(--dark-color);
+    font-weight: 600;
+    font-style: italic;
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+
+/* Estilo para el formulario */
+form {
+    max-width: 900px;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 20px;
+    margin: auto;
+    margin-bottom: 30px;
+    animation: fadeIn 0.5s ease-in;
+    box-shadow: 2px 4px 8px 5px #5E8ABF66;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+}
+
+legend {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--dark-blue);
+    margin-bottom: 10px;
+}
+
+
+.datos-personales{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2%;
+    grid-template-areas: "nombre apellidos"
+                        "fecha";
+    
+}
+
+.nombre{
+    grid-area: nombre;
+}
+.apellidos{
+    grid-area: apellidos;
+}
+.fecha_nacimiento{
+    grid-area: fecha;
+}
+
+.datos-contacto, .datos-registro{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5%;
+}
+
+/* Estilo para los labels */
+label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--dark-blue);
+    margin-bottom: 8px;
+}
+
+
+
+.elemento-registro input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid var(--light-blue);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #f1f8ff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.elemento-registro input:focus{
+    border-color: var(--dark-blue);
+    box-shadow: 0 0 8px rgba(57, 94, 146, 0.3);
+    outline: none;
+}
+
+.botones{
+    padding: 5%;
+    display: grid;
+    width: 100%;
+    grid-template-columns: 2fr 1.5fr;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5%;
+}
+
+
+
+.botones input {
+    width: 50%;
+    padding: 12px;
+    background-color: var(--dark-blue);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+}
+
+.botones input:hover {
+    background-color: var(--light-color);
+    transform: scale(1.05);
+    color: #395E92;
+    font-weight: bold;
+}
+
+.botones input:focus {
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+.botones a{
+    margin: 0;
+    width: 100%;
+}
+
+
+
+p {
+    text-align: center;
+    font-size: 1rem;
+    color: #395e92;
+    margin-top: 10px;
+}
+
+a {
+    text-align: center;
+    color: var(--dark-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    .datos-personales, .datos-contacto, .datos-registro {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .botones {
+        padding: 3%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    input[type="submit"], input[type="button"] {
+        width: 100%;
+        margin-bottom: 3%;
+    }
+}

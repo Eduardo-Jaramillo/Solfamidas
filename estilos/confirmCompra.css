@@ -1,0 +1,134 @@
+header {
+    background:
+        linear-gradient(to bottom,
+            var(--light-blue), var(--dark-blue));
+
+    box-shadow: 0 2px 10px var(--dark-blue);
+}
+
+header h1 {
+    color: whitesmoke;
+
+}
+
+.negrita {
+    font-weight: bolder;
+}
+
+:root {
+    --light-color: #F7C364;
+    --dark-color: #D89231;
+    --dark-blue: #395E92;
+    --light-blue: #5E8ABF;
+}
+
+main {
+    background-color: whitesmoke;
+}
+
+main section {
+    width: 80%;
+    margin: auto;
+}
+
+.finCompra {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 10%;
+    align-items: center;
+
+    padding: 6rem 0;
+}
+
+#logo {
+    cursor: pointer;
+}
+
+.boton {
+    margin-bottom: 1em;
+    background-color: var(--light-color);
+    padding: 0.6rem;
+    color: black;
+    border: 0px;
+    border-bottom: 1px solid rgba(223, 129, 7, 0.39);
+
+
+}
+
+.boton:hover {
+    -webkit-box-shadow: inset 13px -20px 81px -1px rgba(241, 159, 36, 0.836);
+    -moz-box-shadow: inset 13px -20px 81px -1px rgba(241, 159, 36, 0.836);
+    box-shadow: inset 13px -20px 81px -1px rgba(241, 159, 36, 0.836), 0 4px 6px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(223, 129, 7, 0.39);
+    background-color: var(--light-color);
+    color: black;
+}
+
+.seguir {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    box-shadow: 0 3px 15px rgba(31, 31, 31, 0.137);
+    padding: 10%;
+    text-align: justify;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.aviso {
+    text-align: center;
+
+}
+
+.aviso p {
+    font-weight: 500;
+    color: rgb(105, 105, 105);
+    font-size: smaller;
+    margin: 0;
+    padding-bottom: 2rem;
+}
+
+footer {
+    margin: 0 !important;
+}
+
+@media screen and (max-width: 720px) {
+    .finCompra {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .finCompra h2,
+    .finCompra article div p {
+        text-align: center;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    header {
+        justify-content: center;
+    }
+
+    #logo {
+        margin: auto;
+        max-width: 50%;
+        max-height: 16vh;
+        width: auto;
+        height: auto;
+
+    }
+
+}
+
+@media screen and (max-width: 320px) {
+    header {
+        justify-content: center;
+    }
+
+    #logo {
+        max-height: fit-content;
+
+    }
+
+}

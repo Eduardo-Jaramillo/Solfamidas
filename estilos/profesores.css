@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --light-color: #F7C364;
+    --dark-color: #D89231;
+    --dark-blue: #395E92;
+    --light-blue: #5E8ABF;
+}
+
+body {
+    font-family: "Montserrat", serif;
+}
+
+/* Estilos generales de main */
+main {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+main h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+/* Estilos de cada profesor */
+
+.profesor {
+    width: 90%;
+    min-width: 300px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(to bottom, var(--light-color), var(--dark-color));
+    margin-bottom: 5%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 5px rgba(0, 0, 0, 0.1);
+
+}
+
+.profesor:nth-child(even) {
+    flex-direction: row;
+}
+
+.profesor:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+
+/* Animación profesores */
+@keyframes caerDelCielo {
+    0% {
+        transform: translateY(-100vh);
+        /* Empieza por encima de la pantalla */
+        opacity: 0;
+
+    }
+
+    100% {
+        transform: translateY(0);
+        /* Llega a su posición original */
+        opacity: 1;
+
+    }
+}
+
+/* Aplicar la animación a cada div de profesor */
+.profesor {
+    animation: caerDelCielo 1s ease-out forwards;
+    opacity: 0;
+}
+
+/* Añadimos un retraso a cada profesor para que caigan secuencialmente */
+.profesor:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.profesor:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.profesor:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+
+/* Estilos de la sección de descripción */
+.descripcion {
+    flex: 2;
+    padding: 20px;
+}
+
+.descripcion h3 {
+    font-size: 2.3rem;
+    font-weight: 600;
+    color: var(--dark-blue);
+    margin-bottom: 10px;
+}
+
+
+
+.descripcion p {
+    font-size: 1.5rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+.descripcion p span {
+    color: var(--dark-blue);
+    font-size: 1.6rem;
+    font-weight: bolder;
+}
+
+
+/* Estilos de la sección de foto */
+.foto {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.foto img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+
+}
+
+
+.foto img:hover {
+    -webkit-transform: rotateY(180deg);
+    -webkit-transform-style: preserve-3d;
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+}
+
+/* Botón */
+.foto button {
+    background-color: #395E92;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.foto button:hover {
+    background-color: var(--light-blue);
+    transform: scale(1.05);
+}
+
+.foto button:focus {
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ----------- Dialogos --------------- */
+
+/* Fondo semi-transparente detrás del diálogo */
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+dialog {
+    font-family: "Montserrat", serif;
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 95%;
+    max-width: 500px;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Centra el diálogo en la pantalla */
+    min-width: 300px;
+    z-index: 10;
+    /*  Diálogo  por encima del contenido */
+}
+
+dialog h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+dialog form {
+    max-width: 500px;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+dialog label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--dark-blue);
+    align-self: flex-start;
+}
+
+dialog input[type="email"],
+dialog input[type="text"],
+dialog textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid var(--light-blue);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #f1f8ff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+dialog input[type="email"]:focus,
+dialog input[type="password"]:focus,
+dialog textarea {
+    border-color: var(--dark-blue);
+    box-shadow: 0 0 8px rgba(57, 94, 146, 0.3);
+    outline: none;
+}
+
+
+dialog input[type="submit"],
+dialog button {
+    padding: 12px;
+    width: 30%;
+    background-color: var(--dark-blue);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+}
+
+dialog input[type="submit"],
+dialog button:hover {
+    background-color: var(--light-blue);
+    /* Azul medio al pasar el ratón sobre el botón */
+}
+
+
+
+
+/* ---------Diseño responsiv--------------- */
+@media (max-width: 768px) {
+    main h2 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 30px;
+        margin-top: 20px;
+    }
+
+    .profesor {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* si no aclaro los hijos no se distribuyen */
+    .profesor:nth-child(even) {
+        flex-direction: column;
+    }
+
+    .profesor:nth-child(odd) {
+        flex-direction: column;
+    }
+
+    .descripcion,
+    .foto {
+        padding: 10px;
+    }
+
+    .descripcion h3 {
+        font-size: 1.5rem;
+    }
+
+    .descripcion p {
+        font-size: 0.95rem;
+    }
+
+    .descripcion p span {
+        font-size: 1rem;
+    }
+
+    .foto img {
+        max-width: 200px;
+    }
+
+    .foto button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    dialog h3 {
+        font-size: 1.5rem;
+    }
+
+    dialog label {
+        font-size: 1rem;
+    }
+
+    dialog input[type="submit"],
+    dialog button {
+        width: 50%;
+    }
+}
+
+@media (max-width: 480px) {
+    dialog h3 {
+        font-size: 1.2rem;
+    }
+
+    dialog label {
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,370 @@
+:root {
+    --light-color: #F7C364;
+    --dark-color: #D89231;
+    --dark-blue: #395E92;
+    --light-blue: #5E8ABF;
+}
+
+body {
+    font-family: "Montserrat", serif;
+}
+
+main {
+    margin: 5% 10%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+h2 {
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+section {
+    margin-bottom: 5%;
+}
+
+.nuestros-profesores,
+.nuestras-clases,
+.sobre-nosotros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* -------------------CARRUSEL PRINCIPAL---------------------- */
+
+.contenedor-carrusel {
+    margin-top: 2rem;
+}
+
+.slider-wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.slider {
+    display: flex;
+    aspect-ratio: 16/9;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 0.25rem 0.5rem #21212126;
+    border-radius: 0.5rem;
+}
+
+.slider img {
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+
+}
+
+.slider-nav {
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+
+.slider-nav button {
+    all: unset;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    background-color: var(--dark-color);
+    opacity: 0.75;
+    cursor: pointer;
+    transition: opacity ease 150ms;
+}
+
+.slider-nav button:hover {
+    opacity: 1;
+}
+
+.slider-nav button.active {
+    background-color: var(--dark-blue);
+    /* Azul activo */
+    opacity: 1;
+    transform: scale(1.2);
+    /* Agrandar ligeramente */
+}
+
+
+
+/* ----------------SOBRE NOSOTROS ----------------*/
+
+.sobre-nosotros .informacion {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+    margin: 0 auto;
+}
+
+.imagen-sobre-nosotros img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+    filter: grayscale(100%);
+    transform: scale(1);
+    transition: filter 0.3s ease, transform 0.6s ease-in-out;
+
+}
+
+.imagen-sobre-nosotros img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+
+.texto-sobre-nosotros p {
+    font-size: 1.3rem;
+    line-height: 2.3rem;
+    color: #444;
+    text-align: justify;
+    padding: 0 10%;
+}
+
+.texto-sobre-nosotros span {
+    color: var(--dark-blue);
+    font-weight: bold;
+    font-style: italic;
+}
+
+.saber-mas {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.saber-mas p {
+    color: var(--dark-blue);
+    width: 80%;
+    justify-self: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: 1.7rem;
+    margin-bottom: 20px;
+
+}
+
+/* Todos los botones */
+a {
+    text-decoration: none;
+}
+
+
+a button {
+    padding: 12px 30px;
+    border: none;
+    background-color: #5e8abf;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+
+a button:hover {
+    background-color: var(--dark-color);
+    transform: scale(1.05);
+}
+
+
+a button:focus {
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+/* ----------Nuestros profesores------------------ */
+
+.nuestros-profesores .contenedor-carrusel,
+.nuestras-clases .contenedor-carrusel {
+    width: 100%;
+}
+
+
+/* ------------------RESEÑAS --------------------*/
+.resenas {
+    /* padding: 1.5rem; */
+    border-radius: 10px;
+
+}
+
+.resenas h2 {
+    text-align: center;
+    margin-bottom: 5%;
+
+}
+
+.resenas h4 {
+    font-size: 1.3rem;
+}
+
+.contenido {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background:
+        linear-gradient(to bottom, var(--dark-blue), var(--light-blue));
+    justify-content: space-between;
+    gap: 3%;
+    padding: 5%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.resena {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 250px;
+
+}
+
+.datos {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 30px;
+}
+
+.datos img {
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+
+}
+
+.texto {
+    flex: 1;
+    margin: 0;
+}
+
+.datos .estrellas span {
+    color: #957c3d;
+}
+
+
+.resena:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.estrellas span:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s;
+}
+
+
+@media (max-width:1200){
+    h2 {
+        font-size: 2rem;
+        font-weight: 500;
+    }
+    .contenido{
+        display: flex;
+        flex-direction: column;
+
+    }
+    .resena{
+        margin: 10%;
+    }
+
+    .texto {
+        font-size: 1.1rem;
+    }
+}
+
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.9rem;
+        font-weight: 600;
+    }
+    .sobre-nosotros .informacion {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .texto-sobre-nosotros p {
+        padding: 0 5%;
+        font-size: 1.1rem;
+        line-height: 1.8rem;
+    }
+
+    .saber-mas p {
+        font-size: 1.3rem;
+    }
+
+    .saber-mas {
+        margin-top: 20px;
+    }
+
+    .imagen-sobre-nosotros img {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    a button {
+        padding: 10px 25px;
+        font-size: 1.1rem;
+    }
+
+    .texto {
+        font-size: 0.9rem;
+    }
+
+    .resena{
+        margin: 3%;
+    }
+
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.7rem;
+        font-weight: 600;
+    }
+    .texto-sobre-nosotros p {
+        font-size: 1rem;
+        line-height: 1.6rem;
+        padding: 0 5%;
+    }
+
+    .saber-mas p {
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+    }
+
+    a button {
+        padding: 8px 20px;
+        font-size: 1rem;
+    }
+    .texto {
+        font-size: 0.8rem;
+    }
+}

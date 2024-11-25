@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --light-color: #F7C364;
+    --dark-color: #D89231;
+    --dark-blue: #395E92;
+    --light-blue: #5E8ABF;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #ffffff; 
+    font-family: "Montserrat", serif;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+header img {
+    height: 20vh;
+    margin-bottom: 15px;
+    object-fit: contain; /* Para evitar deformación del logo */
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: var(--dark-blue); /* Azul oscuro para el encabezado */
+    font-weight: 600;
+}
+
+form {
+    max-width: 500px;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+    transition: transform 0.3s ease;
+    animation: fadeIn 0.5s ease-in;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+form:hover {
+    transform: translateY(-5px); 
+}
+
+label {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--dark-blue); 
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid var(--light-blue); /* Azul medio para el borde */
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #f1f8ff; /* Fondo suave azul claro */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: var(--light-blue); /* Azul oscuro al enfocar */
+    box-shadow: 0 0 8px rgba(57, 94, 146, 0.3); /* Sombra azul suave al enfocar */
+    outline: none;
+}
+
+.botones{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+}
+
+.botones input {
+    padding: 12px;
+    width: 100%;
+    background-color: var(--dark-blue); 
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+}
+
+.botones input:hover {
+    background-color: var(--light-blue);
+}
+
+
+.botones a{
+    margin: 0;
+    width: 100%;
+}
+p {
+    text-align: center;
+    font-size: 1rem;
+    color: var(--dark-blue); 
+    margin-top: 10px;
+}
+
+a {
+    text-align: center;
+    color: var(--dark-color); /* Amarillo mostaza para el enlace */
+    text-decoration: none;
+    font-weight: 500;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem; 
+    }
+
+    form {
+        padding: 20px;
+    }
+    .botones{
+        padding: 3%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    input[type="submit"], input[type="button"] {
+        width: 50%; 
+        margin-bottom: 3%;
+    }
+}

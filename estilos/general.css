@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    hyphens: auto;
+}
+:root {
+    --light-color: #F7C364;
+    --dark-color: #D89231;
+    --dark-blue: #395E92;
+    --light-blue: #5E8ABF;
+}
+
+p,
+button,
+h1,
+h2,
+h3,
+h4 input,
+li {
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    line-height: 1.6;
+    min-width: 290px;
+}
+
+/* ---------HEADER---------- */
+header {
+    width: 100%;
+    display: flex;
+}
+
+header div {
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+.header-title {
+    justify-content: center;
+}
+
+.header-title h1 {
+    text-align: center;
+}
+
+header img {
+    height: 15vh;
+    border-radius: 70%;
+    margin-left: 20%;
+}
+
+header h1 {
+    font-size: 2.3rem;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 350px) {
+    header h1 {
+        display: none;
+    }
+
+    header div {
+        display: flex;
+    }
+
+    header img {
+        flex: 2;
+    }
+}
+
+/*------------------- BARRA DE NAVEGACION --------------------*/
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background:
+        linear-gradient(to bottom,
+            var(--light-blue), var(--dark-blue));
+
+    box-shadow: 0 2px 10px var(--dark-blue);
+}
+
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 0;
+    margin: 0;
+
+
+}
+
+nav ul li {
+    margin: 0 10px;
+    text-align: center;
+    align-content: center;
+    width: 150px;
+}
+
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 10px 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.2rem;
+}
+
+nav ul li:hover {
+    background-color: #F7C364;
+    border-radius: 10px;
+}
+
+/* icono de hamburguesa en pantallas pequeñas */
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 10px;
+    color: white;
+    background-color: #395e9200;
+    border: none;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+
+    nav ul {
+        flex-direction: column;
+        display: none;
+    }
+
+    nav ul.show {
+        display: flex;
+        flex-wrap: wrap;
+        justify-self: center;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+
+
+/* ----------------FOOTER----------------- */
+footer {
+    position: relative;
+    padding: 2rem;
+    background-color: var(--dark-blue);
+    color: white;
+    z-index: 100;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 5%;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+
+footer div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contacto ul,
+.siguenos ul {
+    list-style: none;
+    display: block;
+}
+
+.contacto a {
+    color: white;
+    text-decoration: underline;
+}
+
+.siguenos ul li{
+    padding: 0.2rem 0;
+}
+
+.siguenos ul li a {
+    color: white;
+    text-decoration: none;
+    /* display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; */
+}
+
+footer span {
+    padding: 0 5px;
+}
+
+footer h3 {
+    padding-bottom: 5%;
+    color: var(--light-color);
+}
+
+.bi {
+    height: 2em;
+    
+}
+
+.siguenos ul li a:hover,
+.contacto a:hover {
+    color: var(--light-color);
+}
+
+
+iframe {
+    width: 100%;
+    min-height: 12.5rem;
+}
+
+
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    footer {
+        grid-template-columns: 1fr; /* Cambia a una sola columna en pantallas pequeñas */
+        gap: 2rem; /* Reduce el espacio entre secciones */
+        padding: 1rem; /* Reduce el padding */
+    }
+
+    footer div {
+        align-items: flex-start; /* Alinea los elementos al principio */
+        text-align: left; /* Alinea el texto a la izquierda */
+    }
+
+    footer h3 {
+        padding-bottom: 1rem;
+        font-size: 1.5rem; /* Reduce el tamaño de la fuente */
+    }
+
+    .contacto ul,
+    .siguenos ul {
+        list-style: none;
+        padding: 0; /* Elimina el padding predeterminado */
+    }
+
+    .contacto ul li,
+    .siguenos ul li {
+        margin-bottom: 0.5rem; /* Añade un pequeño espacio entre los elementos */
+    }
+
+    .siguenos ul li {
+        display: inline-block; /* Hace que los íconos estén en una línea */
+        margin-right: 1rem; /* Añade espacio entre los íconos */
+    }
+
+    .bi {
+        height: 1.5em; /* Ajusta el tamaño de los íconos */
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        padding: 1rem;
+    }
+
+    footer h3 {
+        font-size: 1.2rem; /* Reduce aún más el tamaño de la fuente */
+        padding-bottom: 0.5rem;
+    }
+
+    .contacto ul li,
+    .siguenos ul li {
+        font-size: 0.9rem; /* Reduce el tamaño de la fuente en elementos de lista */
+    }
+
+    .bi {
+        height: 1.2em; /* Ajusta el tamaño de los íconos */
+    }
+
+    .siguenos ul li {
+        margin-right: 0.5rem; /* Ajusta el margen entre los íconos */
+    }
+}
+
+
+
+
